@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dmi_practica12_200070/model/Media.dart';
+import 'package:dmi_practica13_200070/model/Media.dart';
 
 class MediaListItem extends StatelessWidget {
   final Media media;

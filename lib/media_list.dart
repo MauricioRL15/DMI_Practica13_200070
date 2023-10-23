@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:dmi_practica11_200070/common/HttpHandler.dart';
-import 'package:dmi_practica12_200070/model/Media.dart';
-import 'package:dmi_practica12_200070/media_list_item.dart';
-import 'package:dmi_practica12_200070/common/MediaProvider.dart';
-import 'package:dmi_practica12_200070/media_detail.dart';
+import 'package:dmi_practica13_200070/model/Media.dart';
+import 'package:dmi_practica13_200070/media_list_item.dart';
+import 'package:dmi_practica13_200070/common/MediaProvider.dart';
+import 'package:dmi_practica13_200070/media_detail.dart';
 
 class MediaList extends StatefulWidget {
   final MediaProvider provider;
