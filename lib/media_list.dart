@@ -49,7 +49,7 @@ class _MediaListState extends State<MediaList> {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MediaDetail(_media[index]);
+                  return MediaDetail(_media[index], widget.provider);
                 }));
               },
               child: MediaListItem(_media[index]),

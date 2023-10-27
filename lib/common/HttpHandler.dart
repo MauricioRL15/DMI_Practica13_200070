@@ -42,11 +42,11 @@ class HttpHandler {
           });
 
         return sortedResults
-            .map<Media>((item) => new Media(item, MediaType.movie))
+            .map<Media>((item) => Media(item, MediaType.movie))
             .toList();
       } else {
         return data['results']
-            .map<Media>((item) => new Media(item, MediaType.movie))
+            .map<Media>((item) => Media(item, MediaType.movie))
             .toList();
       }
     });
@@ -60,7 +60,7 @@ class HttpHandler {
         .toList()));
   }
 
-  Future<List<Media>> fetchCreditMovies(int mediaId)async{
+  Future<List<Cast>> fetchCreditMovies(int mediaId)async{
     var uri = Uri.https(_baseUrl, "3/movie/$mediaId/credits",
         {'api_key': API_KEY, 'page': "1", 'language': _lenguaje});
     return getJson(uri).then(((data) => data['cast']
@@ -68,12 +68,11 @@ class HttpHandler {
         .toList()));
   }
 
-  Future<List<Media>> fetchCreditShows(int mediaId)async{
+  Future<List<Cast>> fetchCreditShows(int mediaId)async{
     var uri = Uri.https(_baseUrl, "3/tv/$mediaId/credits",
         {'api_key': API_KEY, 'page': "1", 'language': _lenguaje});
     return getJson(uri).then(((data) => data['cast']
-        .map<Cast>((item) => Cast(item, MediaType.show))
-        .toList()));
+        .map<Cast>((item) => Cast(item, MediaType.show)).toList()));
   }
 
 

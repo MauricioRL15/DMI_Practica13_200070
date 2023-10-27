@@ -1,10 +1,14 @@
+import 'package:dmi_practica13_200070/common/MediaProvider.dart';
 import 'package:dmi_practica13_200070/model/Media.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+import 'package:dmi_practica13_200070/cast_scroller.dart';
+import 'package:flutter/painting.dart';
 
 class MediaDetail extends StatelessWidget {
   final Media media;
-  MediaDetail(this.media);
+  final MediaProvider provider;
+  MediaDetail(this.media, this.provider);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +30,8 @@ class MediaDetail extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   child: Container(
-                    width: 400.0,
-                    height: 400.0,
+                    width: 450.0,
+                    height: 450.0,
                   ),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
@@ -68,15 +72,16 @@ class MediaDetail extends StatelessWidget {
                     Text(
                       media.overview,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 4,
+                      maxLines: 10,
                       textAlign: TextAlign.justify,
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14.0,
-                          fontFamily: 'oswald'),
+                        color: Colors.white,
+                        fontSize: 14.0,
+                        fontFamily: 'oswald'),
                     )
                   ],
-                )
+                ),
+                CastController(provider, media.id)
               ]),
             ),
           )
